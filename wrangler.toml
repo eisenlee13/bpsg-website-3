@@ -1,0 +1,7 @@
+name = "bpsg-website-3"
+pages_build_output_dir = "/"
+type = "javascript"
+
+[env.production]
+name = "bpsg-website-3"
+route = "bpsg-website-3.pages.dev"
