@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party Packages | Birthday Party SG</title>
+<meta name="description" content="Kids' party packages in Singapore from $298. Magic shows, games with prizes, face painting, balloon sculpting &amp; glitter tattoos — all prices nett.">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --purple:#7530B5;
+  --pink:#F03070;
+  --teal:#14B0C0;
+  --orange:#F07010;
+  --gold:#F0B010;
+  --navy:#241F54;
+  --bg:#FFFFFF;
+  --soft:#F7F5FB;
+  --line:#E8E4F0;
+}
+
+body {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background:var(--bg);
+  color:var(--navy);
+  line-height:1.6;
+}
+
+.container { max-width:1020px; margin:0 auto; padding:0 20px; }
+
+/* ===== HEADER & NAV ===== */
+header {
+  background:#FFFFFF;
+  padding:24px 0;
+  border-bottom:4px solid var(--teal);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo-img { max-width:280px; width:100%; height:auto; }
+nav a {
+  display:inline-block; font-weight:700; font-size:14px; text-decoration:none;
+  color:var(--navy); margin-left:28px; transition:color .2s;
+}
+nav a:hover { color:var(--pink); }
+nav a.active { color:var(--pink); border-bottom:3px solid var(--pink); padding-bottom:2px; }
+
+/* ===== SECTION BASICS ===== */
+.section { padding:56px 0; }
+.section-title { font-size:30px; font-weight:900; text-align:center; margin-bottom:10px; color:var(--navy); }
+.section-sub { text-align:center; color:#4A4666; font-size:15px; margin-bottom:40px; }
+.tick { color:var(--teal); font-weight:900; }
+
+/* ===== PACKAGES ===== */
+.packages { background:var(--soft); }
+.usual-price { font-size:13.5px; color:#8A87A5; margin-bottom:6px; }
+.usual-price s { text-decoration-thickness:1.5px; }
+.save-badge { display:inline-block; background:var(--gold); color:var(--navy); font-size:12.5px; font-weight:800; padding:3px 10px; border-radius:999px; margin-bottom:12px; }
+.pack-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; }
+.pack {
+  background:#fff; border:2px solid var(--line); border-radius:14px;
+  padding:28px 20px 24px; text-align:center; position:relative;
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+  display:flex; flex-direction:column;
+}
+.pack:hover { border-color:var(--purple); box-shadow:0 8px 22px rgba(117,48,181,.14); transform:translateY(-3px); }
+.pack.star { border-color:var(--pink); box-shadow:0 8px 22px rgba(240,48,112,.14); }
+.pack-badge {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:var(--orange); color:#fff; padding:4px 14px; border-radius:20px;
+  font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; white-space:nowrap;
+}
+.pack h3 { font-size:21px; font-weight:900; color:var(--purple); margin:6px 0 4px; }
+.pack.star h3 { color:var(--pink); }
+.pack .price { font-size:42px; font-weight:900; color:var(--navy); margin-bottom:10px; }
+.pack .list {
+  text-align:left; background:var(--soft); border-radius:10px; padding:14px 16px;
+  font-size:13.5px; color:#3E3A5C; line-height:1.9; margin:16px 0 18px; flex-grow:1;
+}
+.pack a {
+  display:block; background:var(--purple); color:#fff; padding:12px;
+  border-radius:8px; font-weight:800; font-size:14px; text-decoration:none;
+}
+.pack a:hover { background:#5F2596; }
+.pack.star a { background:var(--pink); }
+.pack.star a:hover { background:#D6215D; }
+
+/* ===== BOOKING INFO ===== */
+.book-info {
+  max-width:760px; margin:0 auto; background:var(--soft);
+  border-radius:12px; padding:24px 28px; font-size:14px; color:#3E3A5C; line-height:2;
+}
+.book-info strong { color:var(--navy); }
+
+/* ===== FOOTER ===== */
+footer { background:var(--navy); color:#fff; text-align:center; padding:44px 0 36px; margin-top:56px; }
+footer h3 { font-size:22px; font-weight:900; margin-bottom:18px; }
+.f-cta {
+  display:inline-block; background:var(--pink); color:#fff; padding:14px 36px;
+  border-radius:10px; font-weight:800; font-size:16px; text-decoration:none; margin-bottom:22px;
+}
+.f-cta:hover { background:#D6215D; }
+.f-links { margin:6px 0 16px; }
+.f-links a { color:var(--gold); text-decoration:none; font-weight:700; font-size:14px; margin:0 12px; }
+.f-links a:hover { text-decoration:underline; }
+.f-note { font-size:12.5px; color:#B8B4D0; }
+
+@media (max-width:768px) {
+  header { flex-direction:column; gap:14px; }
+  nav { text-align:center; }
+  nav a { margin:0 14px; }
+  .section-title { font-size:24px; }
+  .pack-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:520px) {
+  .pack-grid { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  * { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+.badge {
+  display:inline-block; background:var(--purple); color:#fff;
+  padding:8px 18px; border-radius:50px; font-size:14px; font-weight:700;
+  margin:0 0 14px;
+}
+.badge-wrap { text-align:center; }
+.fam-title { font-size:24px; font-weight:900; text-align:center; margin-bottom:8px; color:var(--navy); }
+.fam-sub { text-align:center; color:#4A4666; font-size:14.5px; margin-bottom:34px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <img class="logo-img" src="logo.png" alt="Birthday Party SG logo" style="max-width:220px;">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html" class="active">Packages</a>
+      <a href="alacarte.html">À La Carte</a>
+      <a href="corporate.html">Corporate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section packages">
+  <div class="container">
+    <h2 class="section-title">Party Packages</h2>
+    <div class="badge-wrap"><div class="badge">25 Years &middot; 2,100+ Parties</div></div>
+    <p class="section-sub">Nine ways to build the party. One WhatsApp. We handle the rest.</p>
+    <h3 class="fam-title">Magic Show Packages</h3>
+    <p class="fam-sub">A 30-minute comedy magic show at the centre, plus your pick of activity stations.</p>
+    <div class="pack-grid">
+      <div class="pack">
+        <h3>Premium</h3>
+        <div class="price">$510</div>
+        <div class="usual-price">Usual price <s>$540</s></div>
+        <div class="save-badge">Saves $30</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><br>
+          + Pick any 2:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20SHOW%20PREMIUM%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0A%0A2%20x%20Fringe%20Activities%20%28Delete%201%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24510.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack star">
+        <div class="pack-badge">Most Booked</div>
+        <h3>Deluxe</h3>
+        <div class="price">$390</div>
+        <div class="usual-price">Usual price <s>$410</s></div>
+        <div class="save-badge">Saves $20</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><br>
+          + Pick any 1:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20SHOW%20DELUXE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0A%0A1%20x%20Fringe%20Activities%20%28Delete%202%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24390.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack">
+        <h3>Ultimate</h3>
+        <div class="price">$630</div>
+        <div class="usual-price">Usual price <s>$670</s></div>
+        <div class="save-badge">Saves $40</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><br>
+          + All 3 included:<br>
+          <span class="tick">&#10003;</span> Face Painting (1 hr)<br>
+          <span class="tick">&#10003;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&#10003;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20SHOW%20ULTIMATE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0A%0A3%20x%20Fringe%20Activities%20%28All%20Included%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24630.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3 class="fam-title">Magic + Games Packages</h3>
+    <p class="fam-sub">The full works — the magic show plus a hosted games session with prizes.</p>
+    <div class="pack-grid">
+      <div class="pack">
+        <h3>Deluxe</h3>
+        <div class="price">$578</div>
+        <div class="usual-price">Usual price <s>$598</s></div>
+        <div class="save-badge">Saves $20</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + Pick any 1:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20%2B%20GAMES%20DELUXE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A1%20x%20Fringe%20Activities%20%28Delete%202%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24578.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack">
+        <h3>Premium</h3>
+        <div class="price">$698</div>
+        <div class="usual-price">Usual price <s>$728</s></div>
+        <div class="save-badge">Saves $30</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + Pick any 2:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20%2B%20GAMES%20PREMIUM%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A2%20x%20Fringe%20Activities%20%28Delete%201%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24698.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack">
+        <h3>Ultimate</h3>
+        <div class="price">$818</div>
+        <div class="usual-price">Usual price <s>$858</s></div>
+        <div class="save-badge">Saves $40</div>
+        <div class="list">
+          <strong>Magic Show</strong> (30 min)<br><strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + All 3 included:<br>
+          <span class="tick">&#10003;</span> Face Painting (1 hr)<br>
+          <span class="tick">&#10003;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&#10003;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AMAGIC%20%2B%20GAMES%20ULTIMATE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AMagic%20Show%20%2830%20min%29%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A3%20x%20Fringe%20Activities%20%28All%20Included%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24818.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section packages">
+  <div class="container">
+    <h3 class="fam-title">Games Packages</h3>
+    <p class="fam-sub">No magic, all energy — a hosted games session with prizes, plus activity stations.</p>
+    <div class="pack-grid">
+      <div class="pack">
+        <h3>Deluxe</h3>
+        <div class="price">$298</div>
+        <div class="usual-price">Usual price <s>$318</s></div>
+        <div class="save-badge">Saves $20</div>
+        <div class="list">
+          <strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + Pick any 1:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AGAMES%20DELUXE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A1%20x%20Fringe%20Activities%20%28Delete%202%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24298.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack">
+        <h3>Premium</h3>
+        <div class="price">$418</div>
+        <div class="usual-price">Usual price <s>$448</s></div>
+        <div class="save-badge">Saves $30</div>
+        <div class="list">
+          <strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + Pick any 2:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AGAMES%20PREMIUM%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A2%20x%20Fringe%20Activities%20%28Delete%201%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24418.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+
+      <div class="pack">
+        <h3>Ultimate</h3>
+        <div class="price">$538</div>
+        <div class="usual-price">Usual price <s>$578</s></div>
+        <div class="save-badge">Saves $40</div>
+        <div class="list">
+          <strong>Games Session</strong> (30 min, prizes included)<br><br>
+          + All 3 included:<br>
+          <span class="tick">&#10003;</span> Face Painting (1 hr)<br>
+          <span class="tick">&#10003;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&#10003;</span> Glitter Tattoo (1 hr)
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AGAMES%20ULTIMATE%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0AMain%20Activities%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A3%20x%20Fringe%20Activities%20%28All%20Included%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24538.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Package</a>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:36px; font-size:15.5px; color:var(--navy);">
+      Different budget or bigger party? <a href="https://wa.me/6590924042?text=%2ACUSTOM%20PACKAGE%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20a%20custom%20party%20package.%0A%0AMy%20party%20date%20is%20on%3A%20%0A%0APlease%20contact%20me%20asap%21" target="_blank" rel="noopener" style="color:var(--pink); font-weight:800;">WhatsApp us</a> &mdash; we'll build it for you.
+    </p>
+  </div>
+
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="book-info">
+      <strong>How to Book:</strong> <span style="font-weight:700;">Click → WhatsApp → We Check → We Confirm</span><br><br>Pro tip: Book your party 30–45 minutes <em>after</em> your invitation time. This gives late-comers time to arrive without you twiddling thumbs.<br><br><em>We're not paid to waste your money waiting. We're paid to bring fun to every minute.</em><br><br>For kids under 12 · Available islandwide, Singapore.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Ready to Sort the Party?</h3>
+    <a class="f-cta" href="https://wa.me/6590924042?text=Hi%20Birthday%20Party%20SG%21%0A%0AI%27d%20like%20to%20enquire%20about%20party%20entertainment.%0A%0APlease%20contact%20me%20asap.%20Thanks%21" target="_blank" rel="noopener">WhatsApp +65 9092 4042</a>
+    <div class="f-links">
+      <a href="mailto:BirthdayPartySG@gmail.com">Email</a>
+      <a href="https://www.birthdaypartysg.com" target="_blank" rel="noopener">www.BirthdayPartySG.com</a>
+      <a href="https://instagram.com/BirthdayPartySG" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/BirthdayPartySG" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="f-note">Birthday Party SG · Children's party entertainment for kids under 12 · Islandwide, Singapore</p>
+  </div>
+</footer>
+
+</body>
+</html>

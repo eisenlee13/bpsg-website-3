@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À La Carte Activities | Birthday Party SG</title>
+<meta name="description" content="Face painting, balloon sculpting, glitter tattoos, magic shows and games for kids' parties in Singapore. Singles from $130, any 2 activities $230, all 3 $350 — nett prices, islandwide.">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --purple:#7530B5;
+  --pink:#F03070;
+  --teal:#14B0C0;
+  --orange:#F07010;
+  --gold:#F0B010;
+  --navy:#241F54;
+  --bg:#FFFFFF;
+  --soft:#F7F5FB;
+  --line:#E8E4F0;
+}
+
+body {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background:var(--bg);
+  color:var(--navy);
+  line-height:1.6;
+}
+
+.container { max-width:1020px; margin:0 auto; padding:0 20px; }
+
+/* ===== HEADER & NAV ===== */
+header {
+  background:#FFFFFF;
+  padding:24px 0;
+  border-bottom:4px solid var(--teal);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo-img { max-width:280px; width:100%; height:auto; }
+nav a {
+  display:inline-block; font-weight:700; font-size:14px; text-decoration:none;
+  color:var(--navy); margin-left:28px; transition:color .2s;
+}
+nav a:hover { color:var(--pink); }
+nav a.active { color:var(--pink); border-bottom:3px solid var(--pink); padding-bottom:2px; }
+
+/* ===== SECTION BASICS ===== */
+.section { padding:56px 0; }
+.section-title { font-size:30px; font-weight:900; text-align:center; margin-bottom:10px; color:var(--navy); }
+.section-sub { text-align:center; color:#4A4666; font-size:15px; margin-bottom:40px; }
+.tick { color:var(--teal); font-weight:900; }
+.badge {
+  display:inline-block; background:var(--purple); color:#fff;
+  padding:8px 18px; border-radius:50px; font-size:14px; font-weight:700;
+  margin:0 0 14px;
+}
+.badge-wrap { text-align:center; }
+.fam-title { font-size:24px; font-weight:900; text-align:center; margin-bottom:8px; color:var(--navy); }
+.fam-sub { text-align:center; color:#4A4666; font-size:14.5px; margin-bottom:34px; }
+
+/* ===== BUNDLES ===== */
+.packages { background:var(--soft); }
+.usual-price { font-size:13.5px; color:#8A87A5; margin-bottom:6px; }
+.usual-price s { text-decoration-thickness:1.5px; }
+.save-badge { display:inline-block; background:var(--gold); color:var(--navy); font-size:12.5px; font-weight:800; padding:3px 10px; border-radius:999px; margin-bottom:12px; }
+.pack-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; max-width:660px; margin:0 auto; }
+.pack {
+  background:#fff; border:2px solid var(--line); border-radius:14px;
+  padding:28px 20px 24px; text-align:center; position:relative;
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+  display:flex; flex-direction:column;
+}
+.pack:hover { border-color:var(--purple); box-shadow:0 8px 22px rgba(117,48,181,.14); transform:translateY(-3px); }
+.pack.star { border-color:var(--pink); box-shadow:0 8px 22px rgba(240,48,112,.14); }
+.pack-badge {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:var(--orange); color:#fff; padding:4px 14px; border-radius:20px;
+  font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; white-space:nowrap;
+}
+.pack h3 { font-size:21px; font-weight:900; color:var(--purple); margin:6px 0 4px; }
+.pack.star h3 { color:var(--pink); }
+.pack .price { font-size:42px; font-weight:900; color:var(--navy); margin-bottom:10px; }
+.pack .list {
+  text-align:left; background:var(--soft); border-radius:10px; padding:14px 16px;
+  font-size:13.5px; color:#3E3A5C; line-height:1.9; margin:16px 0 18px; flex-grow:1;
+}
+.pack a {
+  display:block; background:var(--purple); color:#fff; padding:12px;
+  border-radius:8px; font-weight:800; font-size:14px; text-decoration:none;
+}
+.pack a:hover { background:#5F2596; }
+.pack.star a { background:var(--pink); }
+.pack.star a:hover { background:#D6215D; }
+
+/* ===== ACTIVITY CARDS ===== */
+.act-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
+.act {
+  background:#fff; border:2px solid var(--line); border-radius:12px;
+  padding:24px 20px; text-align:center; transition:border-color .2s, transform .2s;
+}
+.act:hover { border-color:var(--teal); transform:translateY(-3px); }
+.act .ico { width:46px; height:46px; margin:0 auto 12px; }
+.act .ico svg { width:100%; height:100%; display:block; }
+.act h4 { font-size:16.5px; font-weight:900; color:var(--navy); margin-bottom:6px; }
+.act p { font-size:13.5px; color:#3E3A5C; line-height:1.75; }
+.act .dur { display:inline-block; margin-top:10px; font-size:12.5px; font-weight:800; color:var(--teal); }
+
+/* ===== RENDER GALLERY ===== */
+.render-row { display:flex; justify-content:center; gap:18px; margin-bottom:40px; flex-wrap:wrap; }
+.render-row img { max-width:140px; height:auto; border-radius:12px; display:block; }
+
+/* ===== SINGLES ===== */
+.single-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(185px,1fr)); gap:18px; }
+.single-grid .pack h3 { min-height:68px; display:flex; align-items:center; justify-content:center; }
+.single-grid .pack .price { font-size:34px; margin-bottom:4px; }
+.single-grid .pack .list { margin:12px 0 14px; font-weight:800; color:var(--navy); }
+
+/* ===== NOTE BOX ===== */
+.note {
+  max-width:760px; margin:0 auto; background:#fff;
+  border:2px solid var(--line); border-left:6px solid var(--purple);
+  border-radius:12px; padding:22px 26px; font-size:14.5px; color:#3E3A5C; line-height:1.85;
+}
+.note strong { color:var(--navy); }
+
+/* ===== BOOKING INFO ===== */
+.book-info {
+  max-width:760px; margin:0 auto; background:var(--soft);
+  border-radius:12px; padding:24px 28px; font-size:14px; color:#3E3A5C; line-height:2;
+}
+.book-info strong { color:var(--navy); }
+
+/* ===== FOOTER ===== */
+footer { background:var(--navy); color:#fff; text-align:center; padding:44px 0 36px; margin-top:56px; }
+footer h3 { font-size:22px; font-weight:900; margin-bottom:18px; }
+.f-cta {
+  display:inline-block; background:var(--pink); color:#fff; padding:14px 36px;
+  border-radius:10px; font-weight:800; font-size:16px; text-decoration:none; margin-bottom:22px;
+}
+.f-cta:hover { background:#D6215D; }
+.f-links { margin:6px 0 16px; }
+.f-links a { color:var(--gold); text-decoration:none; font-weight:700; font-size:14px; margin:0 12px; }
+.f-links a:hover { text-decoration:underline; }
+.f-note { font-size:12.5px; color:#B8B4D0; }
+
+@media (max-width:768px) {
+  header { flex-direction:column; gap:14px; }
+  nav { text-align:center; }
+  nav a { margin:0 14px; }
+  .section-title { font-size:24px; }
+  .act-grid { grid-template-columns:1fr; }
+}
+@media (max-width:520px) {
+  .pack-grid { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  * { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <img class="logo-img" src="logo.png" alt="Birthday Party SG">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="alacarte.html" class="active">À La Carte</a>
+      <a href="corporate.html">Corporate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section packages">
+  <div class="container">
+    <h2 class="section-title">À La Carte Activities</h2>
+    <div class="badge-wrap"><div class="badge">25 Years &middot; 2,100+ Parties</div></div>
+    <p class="section-sub">No show, no games host — just the activity stations, running the whole party.</p>
+
+    <div class="render-row">
+      <img src="svc_facepaint.jpg" alt="Face painting" loading="lazy">
+      <img src="svc_balloon.jpg" alt="Balloon sculpting" loading="lazy">
+      <img src="svc_glitter.jpg" alt="Glitter tattoo" loading="lazy">
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack">
+        <h3>Any 2 Activities</h3>
+        <div class="price">$230</div>
+        <div class="usual-price">Usual price <s>$260</s></div>
+        <div class="save-badge">Saves $30</div>
+        <div class="list">
+          Pick any 2:<br>
+          <span class="tick">&bull;</span> Face Painting (1 hr)<br>
+          <span class="tick">&bull;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&bull;</span> Glitter Tattoo (1 hr)<br><br>
+          Two artists, two stations, running side by side.
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AANY%202%20ACTIVITIES%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0A2%20x%20Activities%20%28Delete%201%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24230.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Bundle</a>
+      </div>
+
+      <div class="pack star">
+        <div class="pack-badge">Best Value</div>
+        <h3>All 3 Activities</h3>
+        <div class="price">$350</div>
+        <div class="usual-price">Usual price <s>$390</s></div>
+        <div class="save-badge">Saves $40</div>
+        <div class="list">
+          All 3 included:<br>
+          <span class="tick">&#10003;</span> Face Painting (1 hr)<br>
+          <span class="tick">&#10003;</span> Balloon Sculpting (1 hr)<br>
+          <span class="tick">&#10003;</span> Glitter Tattoo (1 hr)<br><br>
+          Three artists, three stations — nobody queues.
+        </div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20the%20%2AALL%203%20ACTIVITIES%2A%21%0A%0A%2APACKAGE%20DETAILS%2A%0A%0A3%20x%20Activities%20%28All%20Included%29%0A%E2%80%A2%20Face%20Painting%20%281%20hr%29%0A%E2%80%A2%20Balloon%20Sculpting%20%281%20hr%29%0A%E2%80%A2%20Glitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24350.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Bundle</a>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:36px; font-size:15.5px; color:var(--navy);">
+      Want a magic show or a games host as well? That's on the <a href="packages.html" style="color:var(--pink); font-weight:800;">Packages page</a> &mdash; from $298.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3 class="fam-title">Book a Single Activity</h3>
+    <p class="fam-sub">Just need one thing? Every service can be booked on its own.</p>
+    <div class="single-grid">
+      <div class="pack">
+        <h3>Comedy Magic Show</h3>
+        <div class="price">$280</div>
+        <div class="list" style="text-align:center;">30 Mins</div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20%2ACOMEDY%20MAGIC%20SHOW%20%2830%20MINS%29%2A%21%0A%0A%2ABOOKING%20DETAILS%2A%0A%0AComedy%20Magic%20Show%20%2830%20mins%29%0A%0A%2AFinal%20Price%3A%20%24280.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Activity</a>
+      </div>
+
+      <div class="pack">
+        <h3>Games Session</h3>
+        <div class="price">$188</div>
+        <div class="list" style="text-align:center;">30 Mins + Prizes</div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20%2AGAMES%20SESSION%20%2830%20MIN%29%2A%21%0A%0A%2ABOOKING%20DETAILS%2A%0A%0AGames%20Session%20%2830%20min%20%2B%20prizes%20included%29%0A%0A%2AFinal%20Price%3A%20%24188.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Activity</a>
+      </div>
+
+      <div class="pack">
+        <h3>Face Painting</h3>
+        <div class="price">$130</div>
+        <div class="list" style="text-align:center;">60 Mins</div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20%2AFACE%20PAINTING%20%281%20HR%29%2A%21%0A%0A%2ABOOKING%20DETAILS%2A%0A%0AFace%20Painting%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24130.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Activity</a>
+      </div>
+
+      <div class="pack">
+        <h3>Balloon Sculpting</h3>
+        <div class="price">$130</div>
+        <div class="list" style="text-align:center;">60 Mins</div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20%2ABALLOON%20SCULPTING%20%281%20HR%29%2A%21%0A%0A%2ABOOKING%20DETAILS%2A%0A%0ABalloon%20Sculpting%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24130.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Activity</a>
+      </div>
+
+      <div class="pack">
+        <h3>Glitter Tattoo</h3>
+        <div class="price">$130</div>
+        <div class="list" style="text-align:center;">60 Mins</div>
+        <a href="https://wa.me/6590924042?text=%2ABOOKING%20FORM%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20to%20book%20%2AGLITTER%20TATTOO%20%281%20HR%29%2A%21%0A%0A%2ABOOKING%20DETAILS%2A%0A%0AGlitter%20Tattoo%20%281%20hr%29%0A%0A%2AFinal%20Price%3A%20%24130.00%2A%0A%0A%2AMY%20PARTY%20DETAILS%2A%0AMy%20Name%3A%20%0ABD%20Child%20Name%20%26%20Age%3A%20%0ADate%3A%20%0ATime%3A%20%0AAddress%3A%0A%0APlease%20confirm%20my%20booking.%20Thanks%21" target="_blank" rel="noopener">Book This Activity</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="note">
+      <strong>Why do the bundles cost less?</strong><br>
+      One artist on their own means half the party queues while the other half waits for cake. Two or three stations running side by side keep every child busy for the full hour &mdash; so we price the bundles to make the better party the easy choice.<br><br>
+      Already booked a package and want to add another station? Just ask on WhatsApp &mdash; we'll check the artist's availability for your date.
+    </div>
+  </div>
+</section>
+
+<section class="section packages" style="padding-top:44px;">
+  <div class="container">
+    <h3 class="fam-title">What Each Station Is</h3>
+    <p class="fam-sub">One artist per station, one hour each, all running at the same time.</p>
+    <div class="act-grid">
+      <div class="act">
+        <div class="ico"><svg viewBox="0 0 256 256" fill="#7530B5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M224,127.17a96.48,96.48,0,0,1-2.39,22.18A24,24,0,0,1,198.21,168H152a24,24,0,0,0-24,24,24,24,0,0,1-32,22.61C58.73,201.44,32,169.81,32,128a96,96,0,0,1,95-96C179.84,31.47,223.55,74.35,224,127.17Z" opacity="0.2"/><path d="M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z"/></svg></div>
+        <h4>Face Painting</h4>
+        <p>Butterflies, superheroes, tigers — whatever they ask for. Skin-safe, water-based paints that wash off the same night.</p>
+        <div class="dur">1 hour &middot; 1 artist</div>
+      </div>
+      <div class="act">
+        <div class="ico"><svg viewBox="9.5 9.5 493.0 493.0" fill="#14B0C0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#14B0C0" d="M325.4 49.03h-1c-1.7.1-3.4.52-4.9 1.25c-8 3.79-12.7 13.76-13.8 27.34c-1.1 13.57 2 29.58 6.7 40.08c5.7 12.6 17.6 28.6 30.7 39.4c1.9-2.9 4.2-5.4 6.7-7.6c-16-18.6-24.3-40.6-29.9-60.21l17.4-4.96c5.6 19.47 13.7 40.07 28.6 55.97c1.7-.7 3.4-1.3 5.2-1.8c5.6-1.8 11.5-3.1 17.3-4c-.2-.8-.3-1.7-.5-2.5c-3.7-17.2-13-36.69-21.3-49.67c-5.6-8.75-14.7-19.4-23.9-26.08c-6.5-4.71-12.2-7.19-17.3-7.22M42.93 131.8c-3.7.2-6.9 1.2-9.23 2.8c-5.22 3.6-9.25 12-10.07 21.8c-.82 9.9 1.7 20.4 5.93 26.3c3.99 5.4 12.79 10.7 21.95 12.8c5.19 1.2 10.28 1.3 14.58.5l13.4 18.1c-1.01 5.6-.61 12.8 1.13 20.4c3.56 15.7 12.61 33.3 20.98 43.9h.1c.7.9 1.5 1.8 2.3 2.8c2.7-4 6.1-7.6 9.9-10.6c.4-.3.9-.7 1.3-1l-15.35-21.2l14.55-10.6l16.5 22.7c6.3-2.7 13.1-4.9 20.1-6.7c.2 0 .4-.1.6-.1c-4.4-6.8-9.1-13.2-13.2-18.5c-7.3-9.2-17.9-21-28.1-28.4c-5.1-3.6-10.1-6.1-13.95-6.9c-1.45-.3-2.72-.4-3.88-.4c-.39 0-.77 0-1.14.1h-.12l-11.1-15c1.45-3.5 2.35-7.8 2.53-12.3c.36-9.2-2.37-19.1-6.43-24.7v-.1c-3.93-5.6-12.35-11.4-20.99-14c-3.32-1.1-6.55-1.6-9.55-1.7h-2.68zm369.57 19c-1.6 0-3.3 0-5 .1c-10.1.3-21.6 1.7-31 4.7c-6.3 2-11.6 4.7-15.1 7.7c-3.4 2.9-5.2 5.8-5.7 9.7c-1.3 11.1 6.9 22.5 21 32c14.1 9.4 33.3 15.6 47.1 16.1h.1c12.4.5 30.3-3.8 43.8-11.4c13.4-7.5 21.3-17.2 20.8-27.1c-.3-5-2.3-8.9-6.3-12.8s-10.1-7.4-17.4-10.2c-14.6-5.7-33.5-8.3-47.6-8.7h-.1c-1.5 0-3-.1-4.6-.1m6.1 13.1c17.2.1 32.3 3 46.8 6.4l-4.2 17.6c-24-5.8-46-9.6-78.7-1.7l-4.2-17.4c13.4-3.3 25.6-4.7 36.8-4.9zm-77.5 27.7c-2 1.5-4 3.1-6 4.9c-11 10.1-20.6 25.1-24.9 37c-1.5 4.3-2.7 9.5-3.4 15c3.4.5 6.9 1 10.3 1.6c7.7-17.1 18-33.1 29.8-48.4c-2.3-3.2-4.3-6.5-5.8-10.1m18.6 23.2c-9.9 12.8-18.3 25.9-24.7 39.5c11.1 3.2 21.3 7.6 29.8 14c1.7 1.3 3.4 2.7 4.9 4.3c5-5.7 8.9-11.7 11.3-17.2c2.8-6.7 4.5-15.8 4.8-25.2c-6.6-2.8-13.1-6.3-19.1-10.3c-2.4-1.6-4.7-3.3-7-5.1m-104.5 48.5c-7 0-13.7 0-19.9.1c-23 .3-54.8 1.5-79.9 7.9c-12.5 3.2-23.2 7.7-30.3 13.4c-7 5.6-10.6 11.6-10.8 20.5c-.2 9.4 3.3 16.1 10.4 22.5c7 6.4 17.9 11.8 30.7 15.8c25.6 8.1 58.3 10.8 81.8 10.9c24.3.1 58.6-2.2 85.5-10.3c13.4-4.1 24.9-9.6 32.4-16.2c7.4-6.6 11.1-13.6 10.8-23.4c-.3-9.7-4.3-16-12-21.8c-7.7-5.9-19.4-10.4-32.9-13.4c-20.3-4.5-44.6-5.8-65.8-6m-22.9 14.5c25.6 0 54.9 2 87.9 5.1l-1.8 18c-43.5-4.2-80.4-6.3-109.2-4.3c-28.7 2-48.9 8.3-60.3 18.8l-12.2-13.2c16.2-15.1 40.6-21.4 71.3-23.5c7.7-.6 15.8-.8 24.3-.9m-130.1 50.3c-8.78 14-15.89 30.2-20.02 43c-4.95 15.4-9.01 37.6-7.94 56.1c.53 9.2 2.36 17.5 5.38 23.4c3.01 5.9 6.73 9.5 12.52 11.3c5.89 1.9 10.96 1.2 16.96-1.9c5.9-3 12.2-8.7 18.1-16c11.8-14.5 21.7-35.2 27.2-50.8c3-8.3 5.9-18.5 8.2-29c-4.3-1.1-8.5-2.2-12.6-3.5c-8-2.5-15.5-5.5-22.4-9.2c-11.5 26.6-21.2 52.8-21.5 81.4l-17.99-.2c.33-33.8 11.99-63.4 24.49-91.6c-4.2-3.8-7.7-8.1-10.4-13m274.8 1.4c-2.7 4.5-6.1 8.4-10 11.9q-7.95 6.9-18 11.7c5.8 27.4 21.6 46.2 38.5 67.3l-14 11.2c-16.2-20-34.1-41.2-41.4-71.6c-1.4.4-2.8.9-4.2 1.3c-3.5 1.1-7.1 2-10.7 2.9c4.1 18 11.8 36.3 19.4 49.4c7.3 12.6 20.4 28.4 34 38.4c6.8 5 13.7 8.5 19.7 9.8c6 1.4 10.8.9 15.5-1.9c6.1-3.6 9.5-8.7 11.4-16c2-7.2 2.2-16.6.7-26.7c-2.9-20.2-12.1-43.2-20.8-58.9v-.1c-4.9-8.8-12-19.3-20.1-28.7"/></svg></div>
+        <h4>Balloon Sculpting</h4>
+        <p>Swords, flowers, puppies, crowns — twisted on the spot, and the artist keeps going until every child has one.</p>
+        <div class="dur">1 hour &middot; 1 artist</div>
+      </div>
+      <div class="act">
+        <div class="ico"><svg viewBox="0 0 256 256" fill="#F03070" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M225.12,119.71c-7.86,30.94-29.31,32.71-37.36,32.23h-1A36,36,0,1,1,128,180a36,36,0,1,1-58.72-28.06h-1c-8,.48-29.5-1.29-37.36-32.23C22.79,87.84,15.78,48,47.07,48S128,95.8,128,127.67C128,95.8,177.64,48,208.93,48S233.21,87.84,225.12,119.71Z" opacity="0.2"/><path d="M232.7,50.48C229,45.7,221.84,40,209,40c-16.85,0-38.46,11.28-57.81,30.16A140.07,140.07,0,0,0,136,87.53V56a8,8,0,0,0-16,0V87.53a140.07,140.07,0,0,0-15.15-17.37C85.49,51.28,63.88,40,47,40,34.16,40,27,45.7,23.3,50.48c-6.82,8.77-12.18,24.08-.21,71.2,6.05,23.83,19.51,33,30.63,36.42A44,44,0,0,0,128,205.27a44,44,0,0,0,74.28-47.17c11.12-3.4,24.57-12.59,30.63-36.42C239.63,95.24,244.85,66.1,232.7,50.48ZM92,208A28.12,28.12,0,0,1,88.86,152a8,8,0,1,0-1.76-15.9A43.64,43.64,0,0,0,66.36,144c-8.43.09-22-3.57-27.76-26.26C35.72,106.39,27,71.86,35.94,60.3,37.37,58.46,40.09,56,47,56c27.27,0,73,44.88,73,71.67V180A28,28,0,0,1,92,208ZM217.4,117.74c-5.77,22.69-19.33,26.34-27.77,26.26a43.6,43.6,0,0,0-20.74-7.95,8,8,0,1,0-1.76,15.9A28.11,28.11,0,1,1,136,180V127.67C136,100.88,181.69,56,209,56c6.95,0,9.66,2.46,11.1,4.3C229.05,71.86,220.28,106.39,217.4,117.74Z"/></svg></div>
+        <h4>Glitter Tattoo</h4>
+        <p>Stencil, glitter, done in two minutes. Water-resistant for a few days, so the party goes to school on Monday.</p>
+        <div class="dur">1 hour &middot; 1 artist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="book-info">
+      <strong>How to Book:</strong> <span style="font-weight:700;">Click → WhatsApp → We Check → We Confirm</span><br><br>Pro tip: Book your party 30–45 minutes <em>after</em> your invitation time. This gives late-comers time to arrive without you twiddling thumbs.<br><br><em>We're not paid to waste your money waiting. We're paid to bring fun to every minute.</em><br><br>All prices nett. For kids under 12 · Available islandwide, Singapore.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Ready to Sort the Party?</h3>
+    <a class="f-cta" href="https://wa.me/6590924042?text=Hi%20Birthday%20Party%20SG%21%0A%0AI%27d%20like%20to%20enquire%20about%20party%20entertainment.%0A%0APlease%20contact%20me%20asap.%20Thanks%21" target="_blank" rel="noopener">WhatsApp +65 9092 4042</a>
+    <div class="f-links">
+      <a href="mailto:BirthdayPartySG@gmail.com">Email</a>
+      <a href="https://www.birthdaypartysg.com" target="_blank" rel="noopener">www.BirthdayPartySG.com</a>
+      <a href="https://instagram.com/BirthdayPartySG" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/BirthdayPartySG" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="f-note">Birthday Party SG · Children's party entertainment for kids under 12 · Islandwide, Singapore</p>
+  </div>
+</footer>
+
+</body>
+</html>

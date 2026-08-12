@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate &amp; Venue Events | Birthday Party SG</title>
+<meta name="description" content="Children's entertainment staged for malls, condos, preschools and corporate family days in Singapore. Multiple stations, one invoice, one contact. 25 years, 2,100+ events.">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --purple:#7530B5;
+  --pink:#F03070;
+  --teal:#14B0C0;
+  --orange:#F07010;
+  --gold:#F0B010;
+  --navy:#241F54;
+  --bg:#FFFFFF;
+  --soft:#F7F5FB;
+  --line:#E8E4F0;
+}
+
+body {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background:var(--bg);
+  color:var(--navy);
+  line-height:1.6;
+}
+
+.container { max-width:1020px; margin:0 auto; padding:0 20px; }
+
+/* ===== HEADER & NAV ===== */
+header {
+  background:#FFFFFF;
+  padding:24px 0;
+  border-bottom:4px solid var(--teal);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo-img { max-width:280px; width:100%; height:auto; }
+nav a {
+  display:inline-block; font-weight:700; font-size:14px; text-decoration:none;
+  color:var(--navy); margin-left:28px; transition:color .2s;
+}
+nav a:hover { color:var(--pink); }
+nav a.active { color:var(--pink); border-bottom:3px solid var(--pink); padding-bottom:2px; }
+
+/* ===== HERO ===== */
+.hero { padding:52px 0 46px; background:#FFFFFF; text-align:center; }
+.tagline {
+  font-size:13.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--teal); margin-bottom:12px;
+}
+.hero h1 { font-size:38px; font-weight:900; line-height:1.18; color:var(--navy); margin-bottom:16px; }
+.hero h1 .hl-pink { color:var(--pink); }
+.badge {
+  display:inline-block; background:var(--purple); color:#fff;
+  padding:8px 18px; border-radius:50px; font-size:14px; font-weight:700;
+  margin:0 0 16px;
+}
+.hero p.sub { font-size:16.5px; color:#4A4666; max-width:660px; margin:0 auto 28px; line-height:1.8; }
+.cta-primary {
+  display:inline-block; background:var(--pink); color:#fff;
+  padding:16px 42px; border-radius:10px; font-size:17px; font-weight:800;
+  text-decoration:none; transition:transform .15s, box-shadow .15s;
+  box-shadow:0 4px 14px rgba(240,48,112,.35);
+}
+.cta-primary:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(240,48,112,.45); }
+.cta-note { display:block; margin-top:14px; font-size:13.5px; color:#8A87A5; }
+.hero-img { margin:24px auto 28px; text-align:center; }
+.hero-img img { max-width:420px; width:100%; height:auto; border-radius:14px; display:block; margin:0 auto; }
+
+/* ===== PROOF BAND ===== */
+.proof { background:var(--navy); color:#fff; padding:30px 0; }
+.proof-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; text-align:center; }
+.proof .n { font-size:30px; font-weight:900; color:var(--gold); line-height:1.2; }
+.proof .l { font-size:12.5px; font-weight:700; color:#D8D4EC; letter-spacing:.4px; }
+
+/* ===== SECTION BASICS ===== */
+.section { padding:56px 0; }
+.section-title { font-size:30px; font-weight:900; text-align:center; margin-bottom:10px; color:var(--navy); }
+.section-sub { text-align:center; color:#4A4666; font-size:15px; margin-bottom:40px; }
+.soft-bg { background:var(--soft); }
+
+/* ===== WHO WE STAGE FOR ===== */
+.who-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; }
+.who {
+  background:#fff; border:2px solid var(--line); border-radius:12px;
+  padding:24px 22px; transition:border-color .2s, transform .2s;
+}
+.who:hover { border-color:var(--teal); transform:translateY(-3px); }
+.who h4 { font-size:16.5px; font-weight:900; color:var(--purple); margin-bottom:8px; }
+.who p { font-size:13.5px; color:#3E3A5C; line-height:1.75; }
+
+/* ===== WHAT YOU GET ===== */
+.why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; max-width:880px; margin:0 auto; }
+.why {
+  display:flex; gap:12px; background:#fff; border:2px solid var(--line);
+  border-radius:12px; padding:18px;
+}
+.why .wi { font-size:20px; font-weight:900; color:var(--teal); flex-shrink:0; }
+.why .wt { font-size:13.5px; color:#3E3A5C; line-height:1.6; }
+.why .wt strong { display:block; color:var(--navy); font-size:14.5px; margin-bottom:3px; }
+
+/* ===== HOW IT WORKS ===== */
+.steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:900px; margin:0 auto; }
+.step { text-align:center; padding:0 6px; }
+.step .num {
+  width:44px; height:44px; border-radius:50%; background:var(--purple); color:#fff;
+  font-size:18px; font-weight:900; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 12px;
+}
+.step h4 { font-size:15.5px; font-weight:900; color:var(--navy); margin-bottom:6px; }
+.step p { font-size:13px; color:#3E3A5C; line-height:1.7; }
+
+/* ===== CONTACT ===== */
+.contact {
+  max-width:780px; margin:0 auto; background:#fff;
+  border:2px solid var(--line); border-radius:14px; padding:32px 30px; text-align:center;
+}
+.contact h3 { font-size:22px; font-weight:900; color:var(--navy); margin-bottom:10px; }
+.contact p { font-size:14.5px; color:#3E3A5C; line-height:1.8; margin-bottom:22px; }
+.contact-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-mail, .btn-wa {
+  display:inline-block; padding:14px 30px; border-radius:10px;
+  font-weight:800; font-size:15px; text-decoration:none;
+}
+.btn-mail { background:var(--navy); color:#fff; }
+.btn-mail:hover { background:#171340; }
+.btn-wa { background:var(--teal); color:#fff; }
+.btn-wa:hover { background:#0F929F; }
+.contact .fine { font-size:12.5px; color:#8A87A5; margin-top:18px; margin-bottom:0; }
+
+/* ===== FOOTER ===== */
+footer { background:var(--navy); color:#fff; text-align:center; padding:44px 0 36px; margin-top:56px; }
+footer h3 { font-size:22px; font-weight:900; margin-bottom:18px; }
+.f-cta {
+  display:inline-block; background:var(--pink); color:#fff; padding:14px 36px;
+  border-radius:10px; font-weight:800; font-size:16px; text-decoration:none; margin-bottom:22px;
+}
+.f-cta:hover { background:#D6215D; }
+.f-links { margin:6px 0 16px; }
+.f-links a { color:var(--gold); text-decoration:none; font-weight:700; font-size:14px; margin:0 12px; }
+.f-links a:hover { text-decoration:underline; }
+.f-note { font-size:12.5px; color:#B8B4D0; }
+
+@media (max-width:768px) {
+  header { flex-direction:column; gap:14px; }
+  nav { text-align:center; }
+  nav a { margin:0 14px; }
+  .hero h1 { font-size:27px; }
+  .section-title { font-size:24px; }
+  .proof-grid { grid-template-columns:repeat(2,1fr); gap:24px 18px; }
+  .steps { grid-template-columns:repeat(2,1fr); gap:28px 20px; }
+}
+@media (max-width:520px) {
+  .who-grid { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  * { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <img class="logo-img" src="logo.png" alt="Birthday Party SG">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="alacarte.html">À La Carte</a>
+      <a href="corporate.html" class="active">Corporate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="tagline">Corporate &middot; Malls &middot; Condos &middot; Preschools</div>
+    <h1>One Invoice. One Contact.<br><span class="hl-pink">Every Station Covered.</span></h1>
+    <div class="badge">25 Years &middot; 2,100+ Parties</div>
+    <p class="sub">Children's entertainment for events that are bigger than a living room. We don't send you one performer and wish you luck — we staff every station, brief every artist, and give you a single person to call on the day.</p>
+    <div class="hero-img"><img src="hero.jpg" alt="Party staging: magic, balloons, games and face painting"></div>
+    <a class="cta-primary" href="mailto:BirthdayPartySG@gmail.com?subject=Corporate%20%2F%20Venue%20Enquiry&amp;body=Hi%20Birthday%20Party%20SG%2C%0D%0A%0D%0AI%27d%20like%20a%20proposal%20for%20an%20upcoming%20event.%0D%0A%0D%0AOrganisation%3A%20%0D%0AEvent%20type%3A%20%0D%0ADate%28s%29%3A%20%0D%0AVenue%3A%20%0D%0AExpected%20turnout%3A%20%0D%0AHours%20needed%3A%20%0D%0AActivities%20of%20interest%3A%20%0D%0A%0D%0AThank%20you.">Request a Proposal</a>
+    <span class="cta-note">Weekday replies, usually same working day.</span>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container">
+    <div class="proof-grid">
+      <div><div class="n">25</div><div class="l">YEARS RUNNING</div></div>
+      <div><div class="n">2,100+</div><div class="l">PARTIES STAGED</div></div>
+      <div><div class="n">6</div><div class="l">SERVICE LINES</div></div>
+      <div><div class="n">1</div><div class="l">INVOICE, ONE CONTACT</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Who We Stage For</h2>
+    <p class="section-sub">If children will be there and someone has to keep them occupied, that's the job we do.</p>
+    <div class="who-grid">
+      <div class="who">
+        <h4>Malls &amp; Retail</h4>
+        <p>School-holiday programmes, festive activations, atrium weekends. Continuous stations that handle walk-up crowds rather than a fixed audience.</p>
+      </div>
+      <div class="who">
+        <h4>Condos &amp; MCSTs</h4>
+        <p>Family days and festive gatherings at the clubhouse or pool deck. We scale the number of artists to the turnout you expect, not the other way round.</p>
+      </div>
+      <div class="who">
+        <h4>Preschools &amp; Enrichment</h4>
+        <p>Graduations, Children's Day, open houses. Age-appropriate content, artists used to working with teachers and a fixed timetable.</p>
+      </div>
+      <div class="who">
+        <h4>Corporate Family Days</h4>
+        <p>Staff family events where the children's programme has to run itself so parents can actually enjoy the day. Quoted per event, invoiced properly.</p>
+      </div>
+      <div class="who">
+        <h4>Community &amp; CC Events</h4>
+        <p>Grassroots celebrations and neighbourhood carnivals — multiple stations, high throughput, no queue left standing.</p>
+      </div>
+      <div class="who">
+        <h4>Roadshows &amp; Launches</h4>
+        <p>When the children's corner is a footfall tool, not a favour. We staff it to keep families on site longer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft-bg">
+  <div class="container">
+    <h2 class="section-title">What You Actually Get</h2>
+    <p class="section-sub">The coordination is the product. The artists are the easy part.</p>
+    <div class="why-grid">
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>One Invoice, One Contact</strong>You brief one person and receive one invoice — not five vendors chasing five approvals through your finance team.</div></div>
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>Six Lines Under One Roof</strong>Magic, games, face painting, balloon sculpting, glitter tattoos and caricature — combined into one programme that fits your run sheet.</div></div>
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>Backup Artists on Standby</strong>25 years means a bench. If someone falls ill on the morning of your event, we replace them — that's our problem, not yours.</div></div>
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>Briefed to Your Run Sheet</strong>Start times, break rotations, station placement and crowd flow agreed before the day, so your team isn't directing artists on the floor.</div></div>
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>Setup and Teardown Handled</strong>Artists arrive early, bring their own equipment, and clear their station. Venue left as we found it.</div></div>
+      <div class="why"><div class="wi">✓</div><div class="wt"><strong>Vetted Artists</strong>Every artist is someone we've worked with and would put in front of our own clients. Documentation available on request.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Four steps, and the first one takes you two minutes.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Send the Brief</h4>
+        <p>Date, venue, expected turnout, hours. Email or WhatsApp — whichever is faster for you.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>We Propose</h4>
+        <p>A recommended mix of stations, artist count and a fixed quote — no per-head surprises.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>You Confirm</h4>
+        <p>We lock the artists, agree the run sheet and send one invoice for the whole programme.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>We Run It</h4>
+        <p>Artists arrive early and set up. One contact on site and on the phone for the whole event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft-bg">
+  <div class="container">
+    <div class="contact">
+      <h3>Tell Us About the Event</h3>
+      <p>Send the date, venue and rough turnout and we'll come back with a programme and a fixed quote. Corporate and venue work is quoted per event — the published family-party prices don't apply here.</p>
+      <div class="contact-row">
+        <a class="btn-mail" href="mailto:BirthdayPartySG@gmail.com?subject=Corporate%20%2F%20Venue%20Enquiry&amp;body=Hi%20Birthday%20Party%20SG%2C%0D%0A%0D%0AI%27d%20like%20a%20proposal%20for%20an%20upcoming%20event.%0D%0A%0D%0AOrganisation%3A%20%0D%0AEvent%20type%3A%20%0D%0ADate%28s%29%3A%20%0D%0AVenue%3A%20%0D%0AExpected%20turnout%3A%20%0D%0AHours%20needed%3A%20%0D%0AActivities%20of%20interest%3A%20%0D%0A%0D%0AThank%20you.">Email a Brief</a>
+        <a class="btn-wa" href="https://wa.me/6590924042?text=%2ACORPORATE%20%2F%20VENUE%20ENQUIRY%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20a%20proposal%20for%20an%20upcoming%20event.%0A%0AOrganisation%3A%20%0AEvent%20type%3A%20%0ADate%28s%29%3A%20%0AVenue%3A%20%0AExpected%20turnout%3A%20%0AHours%20needed%3A%20%0AActivities%20of%20interest%3A%20%0A%0AThank%20you." target="_blank" rel="noopener">WhatsApp a Brief</a>
+      </div>
+      <p class="fine">BirthdayPartySG@gmail.com · +65 9092 4042 · Islandwide, Singapore</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>Planning Something Bigger?</h3>
+    <a class="f-cta" href="https://wa.me/6590924042?text=%2ACORPORATE%20%2F%20VENUE%20ENQUIRY%2A%0A%0AHi%20Birthday%20Party%20SG%2C%0A%0AI%27d%20like%20a%20proposal%20for%20an%20upcoming%20event.%0A%0AOrganisation%3A%20%0AEvent%20type%3A%20%0ADate%28s%29%3A%20%0AVenue%3A%20%0AExpected%20turnout%3A%20%0AHours%20needed%3A%20%0AActivities%20of%20interest%3A%20%0A%0AThank%20you." target="_blank" rel="noopener">WhatsApp +65 9092 4042</a>
+    <div class="f-links">
+      <a href="mailto:BirthdayPartySG@gmail.com">Email</a>
+      <a href="https://www.birthdaypartysg.com" target="_blank" rel="noopener">www.BirthdayPartySG.com</a>
+      <a href="https://instagram.com/BirthdayPartySG" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/BirthdayPartySG" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="f-note">Birthday Party SG · Children's party entertainment · Islandwide, Singapore</p>
+  </div>
+</footer>
+
+</body>
+</html>
